@@ -1,4 +1,7 @@
 # Gmod Spawn Point Util
+
+Very simple util that make easier creating of spawnpoints tables
+
 ### Commands: 
 * sputil_print - print all your spawnpoints
 * sputil_add - add new spawnpoint(your pos + Vector(0,0,up) (you can edit up on second line of script))
