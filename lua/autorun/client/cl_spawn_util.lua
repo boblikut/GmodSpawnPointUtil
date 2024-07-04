@@ -42,7 +42,7 @@ local function menu()
 	button.DoClick = function()
 		local txt = {"local spawn_points = {"}
 		for k, v in ipairs(spawn_points) do
-			txt[k + 1] = "    Vector("..math.floor(v[1])..", "..math.floor(v[2])..", "..math.floor(v[3])..")"
+			txt[k + 1] = "    Vector("..math.floor(v[1])..", "..math.floor(v[2])..", "..math.floor(v[3])..")"..","
 		end
 		txt[#txt + 1] = "}"
 		local str = table.concat(txt,"\n")
