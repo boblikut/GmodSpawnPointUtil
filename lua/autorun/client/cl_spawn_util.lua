@@ -1,5 +1,5 @@
 local spawn_points = {}
-local up = 10
+local up = 3
 
 concommand.Add( "sputil_add", function()  
 	spawn_points[#spawn_points + 1] = LocalPlayer():GetPos() + Vector(0,0,up)
@@ -7,9 +7,13 @@ concommand.Add( "sputil_add", function()
 end)
 
 concommand.Add( "sputil_print", function()  
-	for k,v in ipairs(spawn_points) do
-		print("Vector("..math.floor(v[1])..", "..math.floor(v[2])..", "..math.floor(v[3])..")")
+	local txt = {"local spawn_points = {"}
+	for k, v in ipairs(spawn_points) do
+		txt[k + 1] = "    Vector("..math.floor(v[1])..", "..math.floor(v[2])..", "..math.floor(v[3])..")"..","
 	end
+	txt[#txt + 1] = "}"
+	local str = table.concat(txt,"\n")
+	print(str)
 end)
 
 local function menu()
